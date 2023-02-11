@@ -1,0 +1,30 @@
+import React from 'react'
+import { tasks as data} from './task'
+import {useState, useEffect} from 'react'
+
+
+function TaskList() {
+
+    const [tasks, setTasks] = useState([]);
+
+    useEffect(() => {
+        setTasks(data)
+    }, [])
+
+    if(tasks.length === 0){
+        return <h1>No hay tareas aun</h1>
+    }
+
+  return (
+    <div>
+        {tasks.map((task) =>(
+            <div key={task.id}>
+                <h2>{task.title}</h2>
+                <p>{task.description}</p>
+            </div>
+        ))}
+    </div>
+  )
+}
+
+export default TaskList
