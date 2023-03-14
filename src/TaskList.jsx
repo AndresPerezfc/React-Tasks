@@ -8,11 +8,8 @@ function TaskList({tasks}) {
 
   return (
     <div>
-        {tasks.map((task) =>(
-            <div key={task.id}>
-                <h2>{task.title}</h2>
-                <p>{task.description}</p>
-            </div>
+        {tasks.map((task) => (
+            <TaskCard key={task.id}></TaskCard>
         ))}
     </div>
   )
