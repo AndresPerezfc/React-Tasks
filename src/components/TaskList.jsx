@@ -1,19 +1,24 @@
-import React from 'react'
-import TaskCard from './TaskCard'
+import React from "react";
+import TaskCard from "./TaskCard";
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContent";
 
-function TaskList({tasks, deleteTask}) {
+function TaskList() {
+  const { tasks } = useContext(TaskContext);
 
-    if(tasks.length === 0){
-        return <h1>No hay tareas aun</h1>
-    }
+  if (tasks.length === 0) {
+    return <h1>No hay tareas aun</h1>;
+  }
 
   return (
     <div>
-        {tasks.map((task) =>(
-            <TaskCard key={task.id} task={task} deleteTask={deleteTask}>  </TaskCard> 
-        ))}
+      {tasks.map((task) => (
+        <TaskCard key={task.id} task={task}>
+          {" "}
+        </TaskCard>
+      ))}
     </div>
-  )
+  );
 }
 
-export default TaskList
+export default TaskList;
