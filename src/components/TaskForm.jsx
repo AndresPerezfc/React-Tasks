@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { tasks } from './task';
+import { tasks } from '../task';
 
 function TaskForm({createTask}) {
 
